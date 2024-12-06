@@ -1,0 +1,27 @@
+\cleardoublepage{}
+\startcontents[paper_cover_part]
+\stopcontents[paper_cover_part]
+\startcontents[paper_chapters]
+
+\startcontents[proposal_cover_part]
+\stopcontents[proposal_cover_part]
+
+\startcontents[proposal_previous]
+\stopcontents[proposal_previous]
+
+\startcontents[proposal_chapters]
+\stopcontents[proposal_chapters]
+
+{
+	\chapter*{目录}
+	\PaperContentIndent
+	\printcontents[paper_cover_part]{}{-1}{}
+	\printcontents[paper_previous]{}{0}{}
+	\printcontents[paper_chapters]{}{0}{}
+
+	\ProposalContentIndent
+	\printcontents[proposal_cover_part]{}{-1}{\setcounter{tocdepth}{0}}
+	\printcontents[proposal_previous]{}{0}{\setcounter{tocdepth}{0}}
+	\printcontents[proposal_chapters]{}{0}{\setcounter{tocdepth}{0}}
+}
+\clearpage

@@ -1,0 +1,50 @@
+% % 也许实在不想调格式了，可以将word转pdf，然后插入
+% \AddPagesNoTitleWithPunctuation{chapter}{本科生毕业论文（设计）任务书}
+% \begin{center}
+% 	\begin{minipage}{\pdfpagewidth}
+% 		\includepdf[
+% 			pages=1,
+% 			scale=1.0,
+% 			width=\pdfpagewidth,
+% 			pagecommand={\pagestyle{empty}},
+% 			% frame, % remove this line if you don't want outer fram of pdf
+% 		]{final/job.pdf}
+% 	\end{minipage}
+% \end{center}
+
+
+{
+\AddPagesTitleWithPunctuation{chapter}{本科生毕业论文（设计）任务书}{\zihao{-2} \bfseries}
+
+
+{
+	\bfseries \zihao{-4}
+	\noindent \par
+	\noindent \par 一、题目：\Title \
+	\noindent \par 二、指导教师对毕业论文（设计）的进度安排及任务要求：
+
+}
+{
+	% 内容
+}
+{
+	\bfseries \zihao{-4}
+	\noindent \par 起讫日期 ~ 年 ~  月 ~  日 \quad 至 \quad ~  年 ~  月  ~ 日
+	
+    \begin{flushright}
+		指导教师（签名） \underline{{\quad}\AdvisorName{\quad}} 职称 \underline{{\quad}~{\quad}}
+	\end{flushright}
+}
+{
+    \bfseries \zihao{-4}
+    \noindent \par 三、系或研究所审核意见：
+
+}
+{
+    % 内容
+}
+{
+\mbox{} \vfill
+\bfseries{\signature{负责人（签名）}}
+}
+}

@@ -1,0 +1,51 @@
+
+% % 也许实在不想调格式了，可以将word转pdf，然后插入
+% \AddPagesNoTitleWithPunctuation{chapter}{本科生毕业论文（设计）考核}
+% \begin{center}
+% 	\begin{minipage}{\pdfpagewidth}
+% 		\includepdf[
+% 			pages=1,
+% 			scale=1.0,
+% 			width=\pdfpagewidth,
+% 			pagecommand={\pagestyle{empty}},
+% 		]{final/eval.pdf}
+% 	\end{minipage}
+% \end{center}
+
+{
+    \AddPagesDifTitleWithPunctuation{毕业论文（设计）考核}{
+        \bfseries \zihao{-2}
+        毕~业~论~文（设计）~~考~核
+    }
+    
+	{
+        \bfseries \zihao{4}
+        \noindent 一、指导教师对毕业论文（设计）的评语：\\
+    }
+    {
+        % 评语内容
+    }
+	\vskip 20mm
+
+    {
+        \bfseries \zihao{-4}
+        \signature{指导教师（签名）}
+    }
+    {
+        \bfseries \zihao{4}
+        \noindent 二、答辩小组对毕业论文（设计）的答辩评语及总评成绩：\\
+    }
+    {
+        % 评语内容
+    }
+	\mbox{} \vfill
+
+	{
+		\bfseries
+		% Example usage:
+		% \finaleval[10][15][5][70][100]
+		\finaleval[~][~][~][~][~]
+
+		\signature{负责人（签名）}
+	}
+}

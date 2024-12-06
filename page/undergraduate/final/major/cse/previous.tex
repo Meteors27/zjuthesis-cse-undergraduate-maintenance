@@ -1,0 +1,14 @@
+\startcontents[paper_previous]
+\thispagestyle{empty}
+\inputpage{final}{promise}
+\prevstyle
+{
+	\ifthenelse{\equal{\BlindReview}{true}}{}{
+		\AddToContent{chapter}{致谢}
+		\inputbody{final/acknowledgement}
+	}
+}
+{
+	\inputbody{final/abstract}
+}
+\stopcontents[paper_previous]

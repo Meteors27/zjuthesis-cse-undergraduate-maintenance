@@ -55,6 +55,10 @@
         % 根据 general/layout.tex 的设置，目录深度为 2
         \changelocaltocdepth{2}
     }
+    \newcommand{\AddToContent}[2]{
+        \phantomsection
+        \addcontentsline{toc}{#1}{#2}
+    }
 
     \newcommand{\AddToContentWithoutPagenum}[2]{
         \addtocontents{toc}{\cftpagenumbersoff{#1}} % 页码不显示
@@ -62,18 +66,34 @@
         \addcontentsline{toc}{#1}{#2}
         \addtocontents{toc}{\cftpagenumberson{#1}} % 页码显示
     }
-    
-    \newcommand{\AddPagesTitleWithPunctuation}[3]{
+
+    \newcommand{\AddPagesTitle}[3]{
         \cleardoublepage
-        \AddToContentWithoutPagenum{#1}{《#2》}
+        \AddToContentWithoutPagenum{#1}{#2}
         \begin{center}
             {#3  #2}
+        \end{center}
+    }
+
+    \newcommand{\AddPagesTitleWithPunctuation}[3]{
+        \cleardoublepage
+        \AddToContentWithoutPagenum{#1}{\textquotedblleft#2\textquotedblright}
+        \begin{center}
+            {#3  #2}
+        \end{center}
+    }
+
+    \newcommand{\AddPagesDifTitleWithPunctuation}[3]{
+        \cleardoublepage
+        \AddToContentWithoutPagenum{#1}{\textquotedblleft#2\textquotedblright}
+        \begin{center}
+            {#3}
         \end{center}
     }
     
     \newcommand{\AddPagesNoTitleWithPunctuation}[2]{
         \cleardoublepage
-        \AddToContentWithoutPagenum{#1}{《#2》}
+        \AddToContentWithoutPagenum{#1}{\textquotedblleft#2\textquotedblright}
     }
 
 	\newcommand{\signatureWithYear}[5]

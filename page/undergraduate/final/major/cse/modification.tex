@@ -1,0 +1,74 @@
+% 也许实在不想调格式了，可以将word转pdf，然后插入
+% \AddPagesNoTitleWithPunctuation{chapter}{根据网上评阅意见进行修改说明}
+% \begin{center}
+% 	\begin{minipage}{\pdfpagewidth}
+% 		\includepdf[
+% 			pages=1,
+% 			scale=1.0,
+% 			width=\pdfpagewidth,
+% 			pagecommand={\pagestyle{empty}},
+% 		]{final/modification.pdf}
+% 	\end{minipage}
+% \end{center}
+
+{
+\AddPagesTitleWithPunctuation{chapter}{根据网上评阅意见进行修改说明}{\zihao{3} \bfseries \songti}
+
+\songti \zihao{5}
+\begin{center}
+	\setlength{\textwidth}{16.32cm}
+	\begin{tabularx}{\textwidth}{
+		|p{\colwidth{3.34cm}}|X|p{\colwidth{2.54cm}}|X|
+		}
+		\hline
+		学生姓名 & \StudentName & 学号 & \StudentID \\
+		\hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{
+		|p{\colwidth{3.34cm}}|X|p{\colwidth{2.54cm}}|X|
+		}
+		\hline
+		指导老师姓名 & \AdvisorName & 合作导师姓名/单位 & ~ \\
+		\hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{
+		|m{\colwidth{3.34cm}}
+		|X|
+		}
+		论文题目（中文） & \Title \\
+		\hline
+	\end{tabularx}
+	\begin{tabularx}{\textwidth}{|X|}
+		评阅修改意见1： \\
+		~        \\
+		~        \\
+		\hline
+		评阅修改意见2： \\
+		~        \\
+		~        \\
+		\hline
+		论文修改说明：  \\
+		~        \\
+		~        \\
+		~        \\
+		~        \\
+		~        \\
+		\hline
+		指导老师意见：  \\
+		~        \\
+		~        \\
+		~        \\
+		~        \\
+		~        \\
+		~        \\
+		\begin{flushright}
+			导师本人签名： \multido{}{11}{\quad} ~ 年 ~ 月 ~ 日
+		\end{flushright}
+		\\
+		\hline
+	\end{tabularx}
+\end{center}
+
+\vfill
+备注：本表格需带到毕业答辩现场交给答辩老师查阅。
+}

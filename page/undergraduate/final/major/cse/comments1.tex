@@ -1,0 +1,67 @@
+% % 也许实在不想调格式了，可以将word转pdf，然后插入
+% \AddPagesNoTitleWithPunctuation{chapter}{浙江大学本科生毕业论文（设计）专家评阅意见（1）}
+% \begin{center}
+% 	\begin{minipage}{\pdfpagewidth}
+% 		\includepdf[
+% 			pages=1,
+% 			scale=1.0,
+% 			width=\pdfpagewidth,
+% 			pagecommand={\pagestyle{empty}},
+% 		]{final/comments1.pdf}
+% 	\end{minipage}
+% \end{center}
+{
+\AddPagesNoTitleWithPunctuation{chapter}{浙江大学本科生毕业论文（设计）专家评阅意见（1）}
+{\heiti \zihao{-3} \bfseries 浙江大学本科生毕业论文（设计）专家评阅意见}
+
+{
+	\songti \zihao{-4}
+	\begin{center}
+		\begin{adjustbox}{minipage=16.83cm, center}
+			\begin{tabularx}{\textwidth}{|p{4cm}|X|}\hline
+				毕业设计（论文）题目 & \Title \\ \hline
+			\end{tabularx}
+
+			\begin{tabularx}{\textwidth}{|p{2cm}|X|p{1cm}|X|p{1cm}|X|}
+				学生姓名 & \StudentName & 学号 & \StudentID & 年级 & \Grade \\ \hline
+			\end{tabularx}
+
+			\begin{tabularx}{\textwidth}{
+				|p{2.6cm}|X|p{1.46cm}|X|
+				}
+				所在学院 & \Department & 专业 & \Major \\
+				\hline
+			\end{tabularx}
+
+			\begin{tabularx}{\textwidth}{|p{2.6cm}|p{\colwidth{2.26cm}}|p{\colwidth{1.59cm}}|p{\colwidth{2.54cm}}|p{\colwidth{2.22cm}}|X|}
+				指导教师姓名 & \AdvisorName & 职称 & 研究员 & 所在单位 & \Department \\
+				\hline
+			\end{tabularx}
+
+			{\renewcommand{\arraystretch}{1.5}
+			\begin{tabularx}{\textwidth}{|X|}
+				本科生毕业论文（设计）评阅意见：
+				{\zihao{-5}（对论文选题、研究内容与方法、创新点、论文质量与理论水平、论文写作规范与文风和修改建议等方面加以评阅）} \\
+				~                                                               \\
+				~                                                               \\
+				~                                                               \\
+				~                                                               \\
+				~                                                               \\
+				~                                                               \\
+				~                                                               \\
+				~                                                               \\
+				~                                                               \\
+				\hline
+			\end{tabularx}}
+
+			\begin{tabularx}{\textwidth}{|p{2.54cm}|X|p{3.49cm}|X|p{3.49cm}|X|}
+				同意答辩 & ~ & 同意修改后答辩 & ~ & 未达到答辩要求 & ~ \\ \hline
+			\end{tabularx}
+		\end{adjustbox}
+	\end{center}
+
+	\par ~
+	\vfill
+	{\zihao{5} 注：请评阅专家经综合评价后，在相应栏内打“√”。}
+}
+}
