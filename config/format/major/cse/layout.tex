@@ -1,0 +1,74 @@
+
+
+\ifthenelse{\equal{\Degree}{undergraduate}}
+{
+	% TOC entry format
+	% % 目录中章标题字体为黑体
+	% \renewcommand{\cftchapfont}         {\heiti \zihao{-4}}
+
+	\renewcommand{\cftchapnumwidth}       {1.0em}
+	\renewcommand{\cftsecnumwidth}        {1.0em}
+	\renewcommand{\cftsubsecnumwidth}     {1.0em}
+	\renewcommand{\cftsubsubsecnumwidth}  {1.0em}
+
+	% Common header & footer
+	\renewcommand{\commonhead}
+	{
+		\fancyhead{}
+		\fancyhead[EL]{\zihao{-5} \fangsong {浙江大学本科生毕业论文（设计）}}
+		\fancyhead[OR]{\zihao{-5} \fangsong \Title}
+		\renewcommand{\headrulewidth}{0.6pt}
+	}
+
+    \newcommand{\PaperContentIndent}{
+        \setlength{\cftsecindent}       {0em}
+        \setlength{\cftsubsecindent}    {2em}
+        \setlength{\cftsubsubsecindent} {4em}
+    }
+
+    \newcommand{\ProposalContentIndent}{
+        \setlength{\cftsecindent}       {2em}
+        \setlength{\cftsubsecindent}    {4em}
+        \setlength{\cftsubsubsecindent} {6em}
+    }
+
+    \setenumerate{
+        itemsep=0pt,
+        partopsep=0pt,
+        parsep=\parskip,
+        topsep=0pt,
+        wide=0em,
+        labelindent=\parindent,
+        listparindent  = \parindent,
+    }
+
+    \setitemize{
+        itemsep=0pt,
+        partopsep=0pt,
+        parsep=\parskip,
+        topsep=0pt,
+        wide=0em,
+        labelindent=\parindent,
+        listparindent  = \parindent,
+    }
+
+    \setdescription{
+        itemsep=0pt,
+        partopsep=0pt,
+        parsep=\parskip,
+        topsep=0pt,
+        wide=0em,
+        labelindent=\parindent,
+        listparindent  = \parindent,
+    }
+
+    \setenumerate[1]{label=(\arabic*)}
+    \setenumerate[2]{label=\arabic*)}
+
+    \newcommand{\tableformat}{
+        \appto{\@floatboxreset}{\fangsong \zihao{5}} % 设置字体为仿宋，字号为 5 号
+        \appto{\@floatboxreset}{\renewcommand{\arraystretch}{1.1}} % 设置行距为原来的 1 倍
+        \appto{\@floatboxreset}{\renewcommand{\tabcolsep}{1pt}}
+    }
+}{}
+
