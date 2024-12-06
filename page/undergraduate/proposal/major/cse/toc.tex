@@ -1,10 +1,4 @@
-\cleardoublepage{}
-{
-	\ProposalContentIndent
-	\chapter*{目录}
-	\renewcommand{\cftchapfont}{\heiti \zihao{-4}}
-	\printcontents[proposal_chapters]{}{0}{}
-}
+\cleardoublepage
 \ifthenelse{\equal{\Period}{final}}{
 	\resumecontents[proposal_chapters]
 }{}
@@ -12,4 +6,10 @@
 {
     \startcontents[proposal_chapters]
 }{}
+{
+	\ProposalContentIndent
+	\chapter*{目录}
+	\renewcommand{\cftchapfont}{\heiti \zihao{-4}}
+	\printcontents[proposal_chapters]{}{0}{}
+}
 \clearpage
