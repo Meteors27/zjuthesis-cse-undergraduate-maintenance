@@ -1,12 +1,10 @@
-\ifthenelse{\equal{\Period}{final}}{
-	\resumecontents[proposal_previous]
-}{}
-\ifthenelse{\equal{\Period}{proposal}}
-{
-    \startcontents[proposal_previous]
-}{}
-
 \cleardoublepage{}
+\ifthenelse{\equal{\Period}{final}}{
+    \resumecontents[proposal_previous]
+    \AddToContentWithoutPagenum{chapter}{文献综述和开题报告封面}
+}{
+    \startcontents[proposal_previous]
+}
 
 \hskip 40mm
 
