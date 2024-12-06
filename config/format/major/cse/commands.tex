@@ -34,14 +34,6 @@
         }
     }
 
-    \newcommand{\hiddenTocSucsec}{
-        \changelocaltocdepth{0}
-    }
-
-    \newcommand{\showTocSubsec}{
-        % 根据 general/layout.tex 的设置，目录深度为 2
-        \changelocaltocdepth{2}
-    }
     \newcommand{\AddToContent}[2]{
         \phantomsection
         \addcontentsline{toc}{#1}{#2}
