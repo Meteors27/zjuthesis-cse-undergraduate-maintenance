@@ -1,47 +1,88 @@
 \ifthenelse{\equal{\Degree}{undergraduate}}
 {
-    % undergraduate
     \ifthenelse{\equal{\Type}{thesis}}
     {
         \renewcommand{\TitleTypeName}{浙江大学本科生毕业论文（设计）}
     }{}
-}{}
 
-% 用于生成翻译部分的开头内容
-\newcommand{\translationheader}[4]
-{
+    \newcommand{\PaperContentIndent}{
+        \setlength{\cftsecindent}       {0em}
+        \setlength{\cftsubsecindent}    {2em}
+        \setlength{\cftsubsubsecindent} {4em}
+    }
+
+    \newcommand{\ProposalContentIndent}{
+        \setlength{\cftsecindent}       {2em}
+        \setlength{\cftsubsecindent}    {4em}
+        \setlength{\cftsubsubsecindent} {6em}
+    }
+
+
+    % 用于生成翻译部分的开头内容
+    \newcommand{\translationheader}[4]
     {
         {
-            % 设置粗体系列
-            \bfseries
-            % 设置段落缩进为0
-            \setlength{\parindent}{0pt}
-            % 输出译文题目
-            \par \zihao{-3}译文题目：  {#1}
-            % 输出原文题目，引用文献中的标题
-            \par \zihao{-3}原文题目： \citefield{#2}{title}
-            % 输出原文来源，完整引用文献
-            \par \zihao{-3}原文来源： \fullcite{#2}
-            % 引用文献
-            \nocite{#2}
-        }
-        {
-            % 换行
-            \newline
-            % 输出摘要
-            \par \textbf{摘要：}  {#3}
-            % 输出关键字
-            \par \textbf{关键字：} {#4}
+            {
+                % 设置粗体系列
+                \bfseries
+                % 设置段落缩进为0
+                \setlength{\parindent}{0pt}
+                % 输出译文题目
+                \par \zihao{-3}译文题目：  {#1}
+                % 输出原文题目，引用文献中的标题
+                \par \zihao{-3}原文题目： \citefield{#2}{title}
+                % 输出原文来源，完整引用文献
+                \par \zihao{-3}原文来源： \fullcite{#2}
+                % 引用文献
+                \nocite{#2}
+            }
+            {
+                % 换行
+                \newline
+                % 输出摘要
+                \par \textbf{摘要：}  {#3}
+                % 输出关键字
+                \par \textbf{关键字：} {#4}
+            }
         }
     }
-}
 
-\newcommand{\hiddenTocSucsec}{
-    \changelocaltocdepth{0}
-}
+    \newcommand{\hiddenTocSucsec}{
+        \changelocaltocdepth{0}
+    }
 
-\newcommand{\showTocSubsec}{
-    % 根据 general/layout.tex 的设置，目录深度为 2
-    \changelocaltocdepth{2}
-}
+    \newcommand{\showTocSubsec}{
+        % 根据 general/layout.tex 的设置，目录深度为 2
+        \changelocaltocdepth{2}
+    }
 
+    \newcommand{\AddToContentWithoutPagenum}[2]{
+        \addtocontents{toc}{\cftpagenumbersoff{#1}} % 页码不显示
+        \phantomsection
+        \addcontentsline{toc}{#1}{#2}
+        \addtocontents{toc}{\cftpagenumberson{#1}} % 页码显示
+    }
+    
+    \newcommand{\AddPagesTitleWithPunctuation}[3]{
+        \cleardoublepage
+        \AddToContentWithoutPagenum{#1}{《#2》}
+        \begin{center}
+            {#3  #2}
+        \end{center}
+    }
+    
+    \newcommand{\AddPagesNoTitleWithPunctuation}[2]{
+        \cleardoublepage
+        \AddToContentWithoutPagenum{#1}{《#2》}
+    }
+
+	\newcommand{\signatureWithYear}[5]
+	{
+		\begin{flushright}
+			#1 \uline{\quad #2 \quad} \\
+			#3 \quad 年 \quad #4 \quad 月 \quad #5 \quad 日
+		\end{flushright}
+	}
+
+    \newcommand{\colwidth}[1]{\dimexpr#1-2\tabcolsep\relax}
+}{}

@@ -1,0 +1,37 @@
+\cleardoublepage
+\ifthenelse{\equal{\Period}{final}}{
+	\AddToContentNoPagenum{chapter}{指导教师对文献综述和开题报告具体内容要求}
+}
+
+{
+	\pagestyle{fancy}
+	\fancyhead[EL]{\zihao{-5} \songti \TitleTypeName}
+	\fancyhead[OR]{\zihao{-5} \songti \Title}
+	\renewcommand{\headrulewidth}{0.6pt}
+	\fangsong
+
+	{
+		\setlength{\parindent}{0em}
+		\linespreadonehalf
+		\setlength{\parskip}{0.5\baselineskip}
+
+		\zihao{4} \bfseries
+		\par 一、题目：\Title
+		\par 二、指导教师对文献综述、开题报告、外文翻译的具体要求：
+	}
+
+	{
+		\linespreadsingle
+		
+	}
+
+	\mbox{} \vfill
+
+	{
+		\linespreadsingle \zihao{-4} \bfseries
+		\signatureWithYear{指导教师（签名）}{\AdvisorName}{\number\year}{\number\month}{\number\day}
+	}
+
+}
+
+\stopcontents[proposal_previous]

@@ -1,0 +1,83 @@
+% 也许实在不想调表格格式了，可以将word转pdf，然后插入
+% \AddPagesNoTitleWithPunctuation{chapter}{浙江大学本科生毕业论文（设计）开题答辩记录表}
+% \begin{center}
+% 	\begin{minipage}{\pdfpagewidth}
+% 		\includepdf[
+% 			pages=1,
+% 			scale=1.0,
+% 			width=\pdfpagewidth,
+% 			pagecommand={\pagestyle{empty}},
+% 		]{proposal/record.pdf}
+% 	\end{minipage}
+% \end{center}
+{
+    \AddPagesTitleWithPunctuation{chapter}{浙江大学本科生毕业论文（设计）开题答辩记录表}{\heiti \zihao{3} \bfseries}
+
+    \assignpagestyle{\chapter}{empty}
+
+
+    \thispagestyle{empty}
+    \pagestyle{empty}
+
+    \newcommand{\timeinproposalrecord}[3]{
+        \underline{\multido{}{3}{\ } #1 \multido{}{3}{\ }}年\underline{\multido{}{2}{\ } #2 \multido{}{2}{\ }}月\underline{\multido{}{2}{\ } #3 \multido{}{2}{\ }}日 \\
+    }
+	
+    {
+        \zihao{5} \bfseries
+        学院：\Department \hfill 毕业届别：\the\year
+    }
+    {
+        \zihao{-4}
+        \begin{center}
+            \begin{adjustbox}{minipage=16.83cm, center}
+                \setlength{\tabcolsep}{0.19cm}
+                \begin{tabularx}{\textwidth}{|p{\colwidth{2.22cm}}|p{\colwidth{2.54cm}}|p{\colwidth{1.27cm}}|p{\colwidth{3.49cm}}|p{\colwidth{1.59cm}}|X|}
+                    \hline
+                    学生姓名 & \StudentName & 学号 & \StudentID & 专业 & \Major \\
+                    \hline
+                \end{tabularx}
+
+                \begin{tabularx}{\textwidth}{|p{\colwidth{4.76cm}}|X|}
+                    毕业设计（论文）题目 & \Title \\
+                    \hline
+                \end{tabularx}
+
+                \begin{tabularx}{\textwidth}{|p{\colwidth{3.14cm}}|p{\colwidth{2.26cm}}|p{\colwidth{1.59cm}}|p{\colwidth{2.54cm}}|p{\colwidth{2.22cm}}|X|}
+                    指导教师姓名 & \AdvisorName & 职称 & ~ & 所在单位 & \Department \\
+                    \hline
+                \end{tabularx}
+
+                \begin{tabularx}{\textwidth}{|p{\colwidth{3.14cm}}|p{\colwidth{4.99cm}}|p{\colwidth{2.96cm}}|X|}
+                    开题答辩时间 & ~ & 开题答辩地点 & ~ \\
+                    \hline
+                \end{tabularx}
+
+                \begin{tabularx}{\textwidth}{|p{\colwidth{3.14cm}}|X|}
+                    答辩组成员 & ~ \\
+                    \hline
+                \end{tabularx}
+
+                \begin{tabularx}{\textwidth}{|p{\colwidth{16.83cm}}|}
+                    本科生毕业设计（论文）答辩记录：{\zihao{5}（要求在答辩陈述和回答问题等方面具体加以记录与评价）}     \\
+                    ~\\
+                    ~\\
+                    ~\\
+                    ~\\
+                    ~\\
+                    ~\\
+                    ~\\
+                    ~\\
+                    \multido{}{25}{\quad} 记录人（签名）：	\\
+                    ~                                      \\
+                    \multido{}{25}{\quad} \timeinproposalrecord{\number\year}{\number\month}{\number\day} \\
+                    ~\\
+                    \multido{}{23}{\quad} 答辩小组负责人（签名）：负责人                      \\
+                    ~\\
+                    \multido{}{25}{\quad} \timeinproposalrecord{\number\year}{\number\month}{\number\day} \\
+                    \hline
+                \end{tabularx}
+            \end{adjustbox}
+        \end{center}
+    }
+}

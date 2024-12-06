@@ -1,0 +1,37 @@
+% 可能需要将一份word版本的考核表给答辩小组记录人，以便答辩小组记录人填写
+% 也许实在不想调表格格式了，可以将word转pdf，然后插入
+% \AddPagesNoTitleWithPunctuation{chapter}{毕业论文（设计）文献综述和开题报告考核}
+% \begin{center}
+% 	\begin{minipage}{\pdfpagewidth}
+% 		\includepdf[
+% 			pages=1,
+% 			scale=1.0,
+% 			width=\pdfpagewidth,
+% 			pagecommand={\pagestyle{empty}},
+% 			% frame, % remove this line if you don't want outer fram of pdf
+% 		]{proposal/eval.pdf}
+% 	\end{minipage}
+% \end{center}
+
+{
+	\AddPagesTitleWithPunctuation{chapter}{毕业论文（设计）文献综述和开题报告考核}{\zihao{3} \bfseries}
+	
+	{
+		\linespreadsingle
+		\bfseries \zihao{4}
+		\setlength{\parindent}{0em}
+
+		\par 对文献综述、外文翻译和开题报告评语及成绩评定
+	}
+	{
+		\zihao{-4}
+		\linespreadonehalf
+	}
+
+	\mbox{} \vfill
+	\thesisproposaleval[~][~][~]
+
+	\par ~ \\
+
+	{\linespreadonehalf \fangsong \zihao{-4} \bfseries \signatureWithYear{开题报告答辩小组负责人（签名）}{负责人}{\number\year}{\number\month}{\number\day}}
+}
